@@ -233,12 +233,15 @@ site_today = open("site_today.html", "a", encoding='utf-8')
 site_today.write(site_content)
 site_today.close()
 
-#CREATE PAGE FOR ARCHIVE
+#CREATE PAGE FOR ARCHIVE--------------------------------------------------------
 achive_page = open('archive/'+today.strftime("%m%d%y")+'.html','w', encoding='utf-8')
 achive_page.write(site_content)
 achive_page.close()
 
-#Append to
+#APPEND TO ARCHIVE--------------------------------------------------------------
+archive_list = open("archive.html", "a", encoding='utf-8')
+archive_list.write('<li><a href='+'\'/archive/'+today.strftime("%m%d%y")+'.html\'>'+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)+'</a></li>')
+archive_list.close()
 
 #CHECK
 #print(BeautifulSoup(site_content).prettify())
