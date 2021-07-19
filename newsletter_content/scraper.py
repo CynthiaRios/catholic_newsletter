@@ -1,4 +1,4 @@
-El Santo Del Díaimport datetime
+import datetime
 from datetime import date
 import locale
 # Web Scrapping
