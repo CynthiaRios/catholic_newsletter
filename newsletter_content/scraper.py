@@ -60,7 +60,7 @@ elif dt.strftime("%A") == "miÃ©rcoles":
     day_of_week = "miercoles"
 else:
     day_of_week = dt.strftime("%A")
-meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
+meditación_url = "https://www.regnumchristi.org/es/lunes-19-de-agosto-de-2021-el-gran-banquete/"#"https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
 r = requests.get(meditación_url)
 meditación_soup = BeautifulSoup(r.content, 'html5lib')
 meditación_table = meditación_soup.findAll('blockquote')
@@ -76,7 +76,7 @@ r = requests.get(santo_url)
 soup = BeautifulSoup(r.content, 'html5lib')
 saint_page = soup.findAll('div', attrs = {'class':'saint_page'})
 santo_nombre = soup.find('h1')
-santo_descripcion = soup.find('div', attrs = {'id':'life'})
+santo_descripcion = soup.find('small')
 
 url = "https://www.franciscanmedia.org/saint-of-the-day"
 r = requests.get(url)
@@ -257,7 +257,7 @@ achive_page.write(site_content)
 achive_page.close()
 
 #APPEND TO ARCHIVE--------------------------------------------------------------
-archive_list = open("newsletter_content/archive.html", "a", encoding='utf-8')
+archive_list = open("archive.html", "a", encoding='utf-8')
 archive_list.write('<li><a href='+'\'/archive/'+today.strftime("%m%d%y")+'.html\'>'+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)+'</a></li>')
 archive_list.close()
 
