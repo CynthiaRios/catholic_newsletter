@@ -1,4 +1,4 @@
-import datetime
+El Santo Del Díaimport datetime
 from datetime import date
 import locale
 # Web Scrapping
@@ -65,7 +65,7 @@ r = requests.get(meditación_url)
 meditación_soup = BeautifulSoup(r.content, 'html5lib')
 meditación_table = meditación_soup.findAll('blockquote')
 
-#Santo De Hoy
+#El Santo Del Día
 santo_url = "https://www.santopedia.com/santoral/"+str(dt.day)+"-de-"+dt.strftime("%B")
 r = requests.get(santo_url)
 santo_soup = BeautifulSoup(r.content, 'html5lib')
@@ -92,7 +92,7 @@ newsletter_prayers = [
     ["Dios te salve, Maria","Dios te salve, María, llena eres de gracia, el Seńor es contigo.\nBendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.\nSanta María, Madre de Dios,\nruega por nosotros, pecadores,\nahora y en la hora de nuestra muerte."],
     ["Gloria al Padre", "Gloria al Padre\ny al Hijo\ny al Espíritu Santo.\nComo era en el principio,\nahora y siempre,\npor los siglos de los siglos."],
     #["Meditacion Diaria", meditación_table[0].text.strip()],
-    #["Santo de Hoy", saint_nombre + saint_descripcion],
+    #["El Santo Del Día", saint_nombre + saint_descripcion],
     #["Devoción del Mes",devociónes[dt.strftime("%B")]],
     #["Lecturas de Hoy",""],
     #["Lectura I", content_table[0].text.strip() + "\n\n" + address_table[0].text.strip()],
@@ -128,19 +128,6 @@ med_string = med_string.replace("»", "")
 subtitle.string = med_string
 newsletter_content += str(article_template)
 
-#Santo De Hoy-----------------------------------------------------------------------
-title.string = "Santo de Hoy: " + santo_nombre.text
-subtitle = article_template.p
-subtitle.string = santo_descripcion.text
-img = article_template.img
-img['src'] = santo_src
-article_template.img.replace_with(img)
-newsletter_content += str(article_template)
-#empty image
-img = article_template.img
-img['src'] = ""
-article_template.img.replace_with(img)
-
 #Lecturas de Hoy Header--------------------------------------------------------
 title.string = "Lecturas de Hoy"
 subtitle.string = ""
@@ -171,6 +158,19 @@ subtitle.string = content_table[3].text.strip()
 address = lecturas_template.em
 address.string = address_table[2].text.strip()
 newsletter_content += str(lecturas_template)
+
+#El Santo Del Día-----------------------------------------------------------------------
+title.string = "Santo Del Día: " + santo_nombre.text
+subtitle = article_template.p
+subtitle.string = santo_descripcion.text
+img = article_template.img
+img['src'] = santo_src
+article_template.img.replace_with(img)
+newsletter_content += str(article_template)
+#empty image
+img = article_template.img
+img['src'] = ""
+article_template.img.replace_with(img)
 
 #Devoción-----------------------------------------------------------------------
 title.string = "Devoción del Mes"
