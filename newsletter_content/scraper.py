@@ -76,7 +76,7 @@ r = requests.get(santo_url)
 soup = BeautifulSoup(r.content, 'html5lib')
 saint_page = soup.findAll('div', attrs = {'class':'saint_page'})
 santo_nombre = soup.find('h1')
-santo_descripcion = soup.find('small')
+santo_descripcion = soup.find('div', attrs = {'class':'alert alert-info'})
 
 url = "https://www.franciscanmedia.org/saint-of-the-day"
 r = requests.get(url)
