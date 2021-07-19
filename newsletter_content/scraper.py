@@ -99,6 +99,7 @@ newsletter_prayers = [
     #["Salmo Responsorial", content_table[1].text.strip() + "\n\n" + address_table[1].text.strip()],
     #["Evangelio", content_table[3].text.strip() + "\n\n" + address_table[2].text.strip()],
     ["Comunión Espiritual","Jesús mío, creo que estás realmente presente en el Santísimo Sacramento del altar. Te amo por encima de todas las cosas y te deseo en mi alma. Ya que no puedo recibirte sacramentalmente ahora, ven al menos espiritualmente a mi corazón. Y como ya has venido, te abrazo y me uno todo a ti. No dejes que me separe jamás de ti.\nY como si ya te hubiese recibido, te abrazo y me uno todo a Ti. Tú no te ausentes de mí. \nTe suplico, oh Señor mío Jesucristo, que la ardiente y dulce fuerza de tu amor, embargue toda mi alma, a fin de que muera de amor por Ti, a sí como Tú te dignaste morir de amor por mí."],
+    ["Consagración a María", "Bendita sea tu pureza\ny eternamente lo sea,\npues todo un Dios se recrea\nen tan graciosa belleza.\nA ti, celestial Princesa,\nVirgen sagrada Maria,\nte ofrezco desde este día\nalma, vida y corazón.\nMírame con compasión,\nno me dejes, Madre mía, \nahora y en mi ultima agonía."]
     ["Oración a San José", "Glorioso patriarca San José,\ncuyo poder sabe hacer posibles las cosas imposibles,\nen en mi ayuda en estos momentos de angustia y dificultad.\n\nToma bajo tu protección las situaciones\ntan graves y difíciles que te confío,\npara que tengan una buena solución.\n\nMi amado Padre,\ntoda mi confianza está puesta en ti.\nQue no se diga que te haya invocado en vano\ny, como puedes hacer todo con Jesús y María,\nmuéstrame que tu bondad es tan grande como tu poder."],
     ["Oración al ángel de mi guarda", "Ángel de mi guarda,\ndulce compañía,\nno me desampares,\nni de noche ni de día,\nno me dejes solo, que me perdería,\nhasta que me pongas, en paz y alegría,\ncon todos los santos, Jesús y María,\nte doy el corazón y el alma mía\nque son mas tuyos que míos."],
     ["Oración a san Miguel arcángel", "San Miguel Arcángel,\ndefiéndenos en la batalla.\nSé nuestro amparo\ncontra las perversidad y asechanzas\ndel demonio.\nReprímale Dios, pedimos suplicantes,\ny tu príncipe de la milicia celestial\narroja al infierno con el divino poder\na Satanás y a los otros espíritus malignos\nque andan dispersos por el mundo\npara la perdición de las almas."],
@@ -224,7 +225,7 @@ for i in range(len(newsletter_prayers)):
 #Footer-------------------------------------------------------------------------
 footer_template = soup.find('footer', attrs={'class':'section'})
 title = footer_template.h2
-title.string = day_of_week.capitalize() +", "+str(dt.day)+" "+dt.strftime("%B").capitalize() +" "+str(dt.year)
+title.string = day_of_week.capitalize() +", "+str(dt.day)+" de "+dt.strftime("%B").capitalize() +" "+str(dt.year)
 newsletter_content += str(footer_template)
 
 html_start = str(soup)[:str(soup).find(str(header_template))]
