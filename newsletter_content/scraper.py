@@ -152,12 +152,28 @@ address = lecturas_template.em
 address.string = address_table[1].text.strip()
 newsletter_content += str(lecturas_template)
 #Evangelio
-subheading.string = "Evangelio"
-subtitle = lecturas_template.p
-subtitle.string = content_table[3].text.strip()
-address = lecturas_template.em
-address.string = address_table[2].text.strip()
-newsletter_content += str(lecturas_template)
+if dt.strftime("%A") == "domingo":
+    #LECTURA 2
+    subheading.string = "Lectura II"
+    subtitle = lecturas_template.p
+    subtitle.string = content_table[2].text.strip()
+    address = lecturas_template.em
+    address.string = address_table[2].text.strip()
+    newsletter_content += str(lecturas_template)
+    #Evangelio
+    subheading.string = "Evangelio"
+    subtitle = lecturas_template.p
+    subtitle.string = content_table[4].text.strip()
+    address = lecturas_template.em
+    address.string = address_table[4].text.strip()
+    newsletter_content += str(lecturas_template)
+else:
+    subheading.string = "Evangelio"
+    subtitle = lecturas_template.p
+    subtitle.string = content_table[3].text.strip()
+    address = lecturas_template.em
+    address.string = address_table[3].text.strip()
+    newsletter_content += str(lecturas_template)
 
 #El Santo Del Día-----------------------------------------------------------------------
 title.string = "Santo Del Día: " + santo_nombre.text
