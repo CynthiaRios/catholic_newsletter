@@ -89,7 +89,7 @@ newsletter_prayers = [
     ["Oración de la Mañana", "Oh, Jesús, a través del Inmaculado Corazón de María,\nte ofrezco mis oraciones, trabajo, alegrías, sufrimientos de este día,\nen unión al Santo Sacrificio de la Misa para el mundo.\nTe los ofrezco por los méritos de tu Sagrado Corazón:\nla salvación de las almas, enmienda de los pecados, la reunión de todos los cristianos;\nte los ofrezco por nuestros obispos y por los Apóstoles de la oración y de manera particular\npor aquellos que el Santo Padre escogió durante este mes."],
     ["Oración por el Papa Francisco", "Dios nuestro, pastor y guía de todos los fieles,\nmira con bondad a tu hijo Francisco,\na quien constituiste pastor de tu Iglesia,\ny sostenlo con tu amor,\npara que con su palabra y su ejemplo\nconduzca al pueblo que le has confiado\ny llegue, juntamente con él, a la vida eterna.\nPor nuestro Señor Jesucristo, tu Hijo,\nque vive y reina contigo en la unidad del Espíritu Santo\ny es Dios por los siglos de los siglos."],
     ["Padre Nuestro","Padre nuestro que estás en el cielo,\nsantificado sea tu Nombre;\nvenga a nosotros tu Reino;\nhágase tu voluntad\nen la tierra como en el cielo.\nDanos hoy\nnuestro pan de cada día;\nperdona nuestras ofensas,\ncomo también nosotros perdonamos\na los que nos ofenden;no nos dejes caer en la tentación,\ny líbranos del mal.",],
-    ["Dios te salve, Maria","Dios te salve, María, llena eres de gracia, el Seńor es contigo.\nBendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.\nSanta María, Madre de Dios,\nruega por nosotros, pecadores,\nahora y en la hora de nuestra muerte."],
+    ["Ave María","Dios te salve, María, llena eres de gracia, el Seńor es contigo.\nBendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.\nSanta María, Madre de Dios,\nruega por nosotros, pecadores,\nahora y en la hora de nuestra muerte."],
     ["Gloria al Padre", "Gloria al Padre\ny al Hijo\ny al Espíritu Santo.\nComo era en el principio,\nahora y siempre,\npor los siglos de los siglos."],
     #["Meditación Diaria", meditación_table[0].text.strip()],
     #["El Santo Del Día", saint_nombre + saint_descripcion],
@@ -99,7 +99,7 @@ newsletter_prayers = [
     #["Salmo Responsorial", content_table[1].text.strip() + "\n\n" + address_table[1].text.strip()],
     #["Evangelio", content_table[3].text.strip() + "\n\n" + address_table[2].text.strip()],
     ["Comunión Espiritual","Jesús mío, creo que estás realmente presente en el Santísimo Sacramento del altar. Te amo por encima de todas las cosas y te deseo en mi alma. Ya que no puedo recibirte sacramentalmente ahora, ven al menos espiritualmente a mi corazón. Y como ya has venido, te abrazo y me uno todo a ti. No dejes que me separe jamás de ti.\nY como si ya te hubiese recibido, te abrazo y me uno todo a Ti. Tú no te ausentes de mí. \nTe suplico, oh Señor mío Jesucristo, que la ardiente y dulce fuerza de tu amor, embargue toda mi alma, a fin de que muera de amor por Ti, a sí como Tú te dignaste morir de amor por mí."],
-    ["Consagración a María", "Bendita sea tu pureza\ny eternamente lo sea,\npues todo un Dios se recrea\nen tan graciosa belleza.\nA ti, celestial Princesa,\nVirgen sagrada Maria,\nte ofrezco desde este día\nalma, vida y corazón.\nMírame con compasión,\nno me dejes, Madre mía, \nahora y en mi ultima agonía."]
+    ["Consagración a María", "Bendita sea tu pureza\ny eternamente lo sea,\npues todo un Dios se recrea\nen tan graciosa belleza.\nA ti, celestial Princesa,\nVirgen sagrada Maria,\nte ofrezco desde este día\nalma, vida y corazón.\nMírame con compasión,\nno me dejes, Madre mía, \nahora y en mi última agonía."]
     ["Oración a San José", "Glorioso patriarca San José,\ncuyo poder sabe hacer posibles las cosas imposibles,\nen en mi ayuda en estos momentos de angustia y dificultad.\n\nToma bajo tu protección las situaciones\ntan graves y difíciles que te confío,\npara que tengan una buena solución.\n\nMi amado Padre,\ntoda mi confianza está puesta en ti.\nQue no se diga que te haya invocado en vano\ny, como puedes hacer todo con Jesús y María,\nmuéstrame que tu bondad es tan grande como tu poder."],
     ["Oración al ángel de mi guarda", "Ángel de mi guarda,\ndulce compañía,\nno me desampares,\nni de noche ni de día,\nno me dejes solo, que me perdería,\nhasta que me pongas, en paz y alegría,\ncon todos los santos, Jesús y María,\nte doy el corazón y el alma mía\nque son mas tuyos que míos."],
     ["Oración a san Miguel arcángel", "San Miguel Arcángel,\ndefiéndenos en la batalla.\nSé nuestro amparo\ncontra las perversidad y asechanzas\ndel demonio.\nReprímale Dios, pedimos suplicantes,\ny tu príncipe de la milicia celestial\narroja al infierno con el divino poder\na Satanás y a los otros espíritus malignos\nque andan dispersos por el mundo\npara la perdición de las almas."],
@@ -204,7 +204,7 @@ img['src'] = ""
 article_template.img.replace_with(img)
 
 #Prayers-----------------------------------------------------------------------
-title.string = "Oraciónes Diarias"
+title.string = "Oraciones Diarias"
 subtitle.string = ""
 img = article_template.img
 img['src'] = ""
