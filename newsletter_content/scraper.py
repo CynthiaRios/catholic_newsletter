@@ -35,7 +35,7 @@ devociónes = {
     "noviembre":
         "Noviembre es el mes dedicado a las almas del purgatorio.\n\nEl Día de Muertos, 2 de noviembre, está dedicado a las oraciones por todos los fieles difuntos.\n\nEl papa Pablo VI, en la \'Constitución de las Indulgencias\', de 1967, estableció indulgencias parciales y plenarias para las almas del purgatorio, y determinó la semana del 1 al 8 de noviembre como la semana de las almas, en que podemos hacer que se beneficien de las indulgencias plenarias mediante una visita al cementerio para rezar por ellas, habiéndose confesado, comulgando y rezando por el Papa (padrenuestro, ave maría, gloria al padre).\n\nLas almas, por ellas mismas no pueden conseguir su purificación; dependen de nuestras oraciones, misas, limosnas, penitencias, etc., por ellas.",
     "diciembre":
-        "Diciembre es el mes de diciembre está dedicado a la Inmaculada Concepción de la Santísima Virgen María. “Desde toda la eternidad Dios eligió con infinita sabiduría a la mujer que sería la Madre de su divino Hijo. Para preparar al Verbo Encarnado un tabernáculo santo y sin mancha, Dios creó a María en gracia y la dotó desde el momento de su concepción con todos los perfecciones adecuadas a su exaltada dignidad. Santo Tomás enseña que a través de su intimidad con Cristo, principio de gracia, poseía más allá de todas las criaturas una plenitud de vida divina “. – Meditaciones litúrgicas, Las Hermanas de Santo Domingo\n\nEsta fiesta nos invita a meditar sobre la virtud de la pureza. “María sola – ‘el alarde solitario de nuestra naturaleza contaminada’ – nunca vio la pureza de su alma oscurecida por el polvo de ninguna mancha, ni vio en ninguna parte de su camino triunfal hacia el cielo ningún pecado o rastro de mundanalidad. Por un único y singular privilegio de Dios fue preservada del pecado original desde el primer momento de su Inmaculada Concepción; por otro privilegio derivado del primero, el Señor no permitió que se manchara jamás ni siquiera con esos inevitables defectos de la debilidad humana” (Luis M. Martínez)."
+        "Diciembre es el mes de diciembre está dedicado a la Inmaculada Concepción de la Santísima Virgen María. “Desde toda la eternidad Dios eligió con infinita sabiduría a la mujer que sería la Madre de su divino Hijo. Para preparar al Verbo Encarnado un tabernáculo santo y sin mancha, Dios creó a María en gracia y la dotó desde el momento de su concepción con todos los perfecciones adecuadas a su exaltada dignidad. Santo Tomás enseña que a través de su intimidad con Cristo, principio de gracia, poseía más allá de todas las criaturas una plenitud de vida divina “. – Meditaciónes litúrgicas, Las Hermanas de Santo Domingo\n\nEsta fiesta nos invita a meditar sobre la virtud de la pureza. “María sola – ‘el alarde solitario de nuestra naturaleza contaminada’ – nunca vio la pureza de su alma oscurecida por el polvo de ninguna mancha, ni vio en ninguna parte de su camino triunfal hacia el cielo ningún pecado o rastro de mundanalidad. Por un único y singular privilegio de Dios fue preservada del pecado original desde el primer momento de su Inmaculada Concepción; por otro privilegio derivado del primero, el Señor no permitió que se manchara jamás ni siquiera con esos inevitables defectos de la debilidad humana” (Luis M. Martínez)."
 }
 
 #Devotions Link: https://rezoelrosario.com/a-que-dedica-cada-mes-la-iglesia-catolica/
@@ -53,7 +53,7 @@ usccb_soup = BeautifulSoup(r.content, 'html5lib')
 address_table = usccb_soup.findAll('div', attrs = {'class':'address'})
 content_table = usccb_soup.findAll('div', attrs = {'class':'content-body'})
 
-#REGNUMCHRISTI: Meditacion de hoy
+#REGNUMCHRISTI: Meditación de hoy
 if dt.strftime("%A") == "sÃ¡bado":
     day_of_week = "sabado"
 elif dt.strftime("%A") == "miÃ©rcoles":
@@ -91,7 +91,7 @@ newsletter_prayers = [
     ["Padre Nuestro","Padre nuestro que estás en el cielo,\nsantificado sea tu Nombre;\nvenga a nosotros tu Reino;\nhágase tu voluntad\nen la tierra como en el cielo.\nDanos hoy\nnuestro pan de cada día;\nperdona nuestras ofensas,\ncomo también nosotros perdonamos\na los que nos ofenden;no nos dejes caer en la tentación,\ny líbranos del mal.",],
     ["Dios te salve, Maria","Dios te salve, María, llena eres de gracia, el Seńor es contigo.\nBendita tú eres entre todas las mujeres, y bendito es el fruto de tu vientre, Jesús.\nSanta María, Madre de Dios,\nruega por nosotros, pecadores,\nahora y en la hora de nuestra muerte."],
     ["Gloria al Padre", "Gloria al Padre\ny al Hijo\ny al Espíritu Santo.\nComo era en el principio,\nahora y siempre,\npor los siglos de los siglos."],
-    #["Meditacion Diaria", meditación_table[0].text.strip()],
+    #["Meditación Diaria", meditación_table[0].text.strip()],
     #["El Santo Del Día", saint_nombre + saint_descripcion],
     #["Devoción del Mes",devociónes[dt.strftime("%B")]],
     #["Lecturas de Hoy",""],
@@ -115,13 +115,13 @@ newsletter_content = ""
 #Header-------------------------------------------------------------------------
 header_template = soup.find('header', attrs={'class':'section'})
 title = header_template.h1
-title.string = day_of_week.capitalize() +", "+str(dt.day)+" "+dt.strftime("%B").capitalize() +" "+str(dt.year)
+title.string = day_of_week.capitalize() +", "+str(dt.day)+" de "+dt.strftime("%B").capitalize() +" "+str(dt.year)
 newsletter_content += str(header_template)
 
-#Meditacion---------------------------------------------------------------------
+#Meditación---------------------------------------------------------------------
 article_template = soup.find('section', attrs={'class':'section'})
 title = article_template.h2
-title.string = "Meditacion Diaria"
+title.string = "Meditación Diaria"
 subtitle = article_template.p
 med_string = meditación_table[0].text.strip().replace("«", "")
 med_string = med_string.replace("»", "")
@@ -148,6 +148,7 @@ newsletter_content += str(lecturas_template)
 #Salmo Responsorial
 subheading.string = "Salmo Responsorial"
 subtitle = lecturas_template.p
+subtitle.string = content_table[1].text.strip()
 address = lecturas_template.em
 address.string = address_table[1].text.strip()
 newsletter_content += str(lecturas_template)
