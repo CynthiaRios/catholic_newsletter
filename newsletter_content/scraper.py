@@ -258,7 +258,7 @@ achive_page.close()
 
 #APPEND TO ARCHIVE--------------------------------------------------------------
 archive_list = open("archive.html", "a", encoding='utf-8')
-archive_list.write('<li><a href='+'\'/archive/'+today.strftime("%m%d%y")+'.html\'>'+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)+'</a></li>')
+archive_list.write('<li><a href='+'\'/newsletter_content/archive/'+today.strftime("%m%d%y")+'.html\'>'+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)+'</a></li>')
 archive_list.close()
 
 #CHECK
