@@ -55,9 +55,9 @@ content_table = usccb_soup.findAll('div', attrs = {'class':'content-body'})
 
 #REGNUMCHRISTI: Meditación de hoy
 if dt.strftime("%A") == "sÃ¡bado":
-    day_of_week = "sabado"
+    day_of_week = "Sábado"
 elif dt.strftime("%A") == "miÃ©rcoles":
-    day_of_week = "miercoles"
+    day_of_week = "Miércoles"
 else:
     day_of_week = dt.strftime("%A")
 meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
