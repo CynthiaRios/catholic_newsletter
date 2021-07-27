@@ -61,7 +61,7 @@ elif dt.strftime("%A") == "miÃ©rcoles":
 else:
     day_of_week = dt.strftime("%A")
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
-meditación_url = "https://www.regnumchristi.org/es/lunes-26-de-julio-de-2021-dios-me-habla-de-corazon-a-corazon/"
+meditación_url = "https://www.regnumchristi.org/es/martes-27-de-julio-de-2021-ayudame-a-comprender/"
 r = requests.get(meditación_url)
 meditación_soup = BeautifulSoup(r.content, 'html5lib')
 meditación_table = meditación_soup.findAll('blockquote')
