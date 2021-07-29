@@ -127,7 +127,7 @@ title.string = "Meditación Diaria"
 subtitle = article_template.p
 med_string = meditación_table[0].text.strip().replace("«", "")
 med_string = med_string.replace("»", "")
-subtitle.string = med_string
+subtitle.string = "Pablo pasó años al servicio de Cristo, pero experimentó un sufrimiento continuo. No parece justo, ¿verdad? ¿Por qué Dios le permitió sufrir? Esa es una pregunta que muchos nos hacemos hoy en día en cuanto a nosotros mismos. Pensamos que el Señor debería protegernos, pero no siempre lo hace.<br><br>Quizás se deba a que razonamos al revés. Creemos que los cristianos fieles no merecen sufrir, pero desde la perspectiva de Dios el sufrimiento es parte de seguirlo. Si todos tuviéramos vidas fáciles, sin dolor, nunca conoceríamos al Señor, porque nunca lo necesitaríamos. Nos guste o no, la adversidad nos enseña lo que leer la Biblia por sí sola nunca nos enseñará.<br><br>No estoy diciendo que no necesitemos conocer la Palabra de Dios; ella es nuestro fundamento para la fe. Pero si lo que creemos nunca se pone a prueba, sigue siendo conocimiento intelectual. ¿Cómo llegar a saber que se puede confiar en el Señor en medio de los problemas si nunca los hemos tenido? Dios nos da oportunidades para aplicar las verdades bíblicas a los problemas que enfrentamos y, al hacerlo, nos damos cuenta de que Él es fiel.<br><br>Las pruebas pueden ser un medio para edificar la fe o una vía para el desánimo y la autocompasión; eso dependerá de usted. Pero si aplica la Palabra de Dios a su situación, su confianza en el Señor y su fe se fortalecerán por medio de la adversidad."
 newsletter_content += str(article_template)
 
 #Lecturas de Hoy Header--------------------------------------------------------
