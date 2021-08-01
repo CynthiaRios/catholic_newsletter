@@ -125,8 +125,7 @@ article_template = soup.find('section', attrs={'class':'section'})
 title = article_template.h2
 title.string = "Meditación Diaria"
 subtitle = article_template.p
-med_string = meditación_table[0].text.strip().replace("«", "")
-med_string = med_string.replace("»", "")
+med_string = "La buena vida. Para cada uno de nosotros, esta frase evoca algo diferente. ¿Qué es la buena vida para usted? ¿Riqueza? ¿Vacaciones? ¿Salud? ¿Poder? Todos anhelamos lo que creemos que sería bueno para nosotros.\n\nPero esa alegría es ersatz, una palabra que significa “sintético” o “artificial”. Pensemos en el juego de cocina de un niño, el que tiene chuletas de plástico y pan de espuma. Cuando los pequeños nos traen un plato lleno de “comida”, solo fingimos comer. Lo mismo ocurre con nuestros malos deseos: nos tientan, pero nos dejan vacíos. En cambio, debemos buscar la vida que Cristo nos presenta y deleitarnos con su verdad.\n\nEn 1 Timoteo 6, Pablo le dice a su discípulo: “A los ricos de este siglo manda que no sean altivos, ni pongan la esperanza en las riquezas, las cuales son inciertas, sino en el Dios vivo, que nos da todas las cosas en abundancia para que las disfrutemos” (1 Ti 6.17). Solo por medio de Él podemos “echar mano de lo que en verdad es vida” (1 Ti 6.19 LBLA)."
 subtitle.string = med_string
 newsletter_content += str(article_template)
 
@@ -181,7 +180,7 @@ else:
 #El Santo Del Día-----------------------------------------------------------------------
 title.string = "Santo Del Día: " + santo_nombre.text
 subtitle = article_template.p
-subtitle.string = santo_descripcion.text
+subtitle.string = "Memoria de san Alfonso María de Ligorio, obispo y doctor de la Iglesia, que insigne por el celo de las almas, por sus escritos, por su palabra y ejemplo, trabajó infatigablemente predicando y escribiendo libros, en especial sobre teología moral, en la que es considerado maestro, para fomentar la vida cristiana en el pueblo. Entre grandes dificultades fundó la Congregación del Santísimo Redentor, para evangelizar a la gente iletrada. Elegido obispo de santa Águeda de los Godos, se entregó de modo excepcional a esta misión, que dejaría quince años después, aquejado de graves enfermedades, y pasó el resto de su vida en Nocera de’Pagani, en la Campania, aceptando grandes trabajos y dificultades."
 img = article_template.img
 img['src'] = santo_src
 article_template.img.replace_with(img)
