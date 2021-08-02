@@ -125,7 +125,7 @@ article_template = soup.find('section', attrs={'class':'section'})
 title = article_template.h2
 title.string = "Meditación Diaria"
 subtitle = article_template.p
-med_string = "La buena vida. Para cada uno de nosotros, esta frase evoca algo diferente. ¿Qué es la buena vida para usted? ¿Riqueza? ¿Vacaciones? ¿Salud? ¿Poder? Todos anhelamos lo que creemos que sería bueno para nosotros.\n\nPero esa alegría es ersatz, una palabra que significa “sintético” o “artificial”. Pensemos en el juego de cocina de un niño, el que tiene chuletas de plástico y pan de espuma. Cuando los pequeños nos traen un plato lleno de “comida”, solo fingimos comer. Lo mismo ocurre con nuestros malos deseos: nos tientan, pero nos dejan vacíos. En cambio, debemos buscar la vida que Cristo nos presenta y deleitarnos con su verdad.\n\nEn 1 Timoteo 6, Pablo le dice a su discípulo: “A los ricos de este siglo manda que no sean altivos, ni pongan la esperanza en las riquezas, las cuales son inciertas, sino en el Dios vivo, que nos da todas las cosas en abundancia para que las disfrutemos” (1 Ti 6.17). Solo por medio de Él podemos “echar mano de lo que en verdad es vida” (1 Ti 6.19 LBLA)."
+med_string = "Una tendencia creciente entre las empresas y las organizaciones es redactar una declaración de misión para mantenerse enfocadas en lo que más les importa. Pero la idea no es nueva: podemos ver que el Señor Jesús tenía un claro enfoque en la misión que su Padre le dio. A la edad de 12 años, fue capaz de identificar su propósito al decir que tenía que estar en la casa de su Padre (Lc 2.49).\n\n¿Tiene usted una comprensión clara de cuál es la misión de Dios para su vida? El mandato de ir por todo el mundo, de la Gran Comisión, es tan vasto que a veces perdemos de vista cómo implementarlo en el lugar en el que estamos. Las personas se salvan de una en una, ya sea en casa o en el extranjero, y Dios utiliza a cristianos comunes y corrientes como mensajeros del evangelio.\n\nNo debemos descuidar las oportunidades que Dios nos brinda en nuestros vecindarios y lugares de trabajo. El antiguo himno de Ina D. Ogdon \'Brilla en el sitio donde estés\' nos recuerda esta verdad:\n\nNo esperes el momento de una gran acción,\n\nNi que pueda lejos ir tu luz;\n\nDe la vida a los pequeños actos da atención,\n\nBrilla en el sitio donde estés."
 subtitle.string = med_string
 newsletter_content += str(article_template)
 
@@ -180,7 +180,7 @@ else:
 #El Santo Del Día-----------------------------------------------------------------------
 title.string = "Santo Del Día: " + santo_nombre.text
 subtitle = article_template.p
-subtitle.string = "Memoria de san Alfonso María de Ligorio, obispo y doctor de la Iglesia, que insigne por el celo de las almas, por sus escritos, por su palabra y ejemplo, trabajó infatigablemente predicando y escribiendo libros, en especial sobre teología moral, en la que es considerado maestro, para fomentar la vida cristiana en el pueblo. Entre grandes dificultades fundó la Congregación del Santísimo Redentor, para evangelizar a la gente iletrada. Elegido obispo de santa Águeda de los Godos, se entregó de modo excepcional a esta misión, que dejaría quince años después, aquejado de graves enfermedades, y pasó el resto de su vida en Nocera de’Pagani, en la Campania, aceptando grandes trabajos y dificultades."
+subtitle.string = santo_descripcion.text
 img = article_template.img
 img['src'] = santo_src
 article_template.img.replace_with(img)
