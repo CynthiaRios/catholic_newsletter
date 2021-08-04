@@ -60,11 +60,12 @@ elif dt.strftime("%A") == "miÃ©rcoles":
     day_of_week = "Miércoles"
 else:
     day_of_week = dt.strftime("%A")
+
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
-meditación_url = "https://www.regnumchristi.org/es/viernes-30-de-julio-de-2021-es-jesus-un-hombre-ordinario/"
+meditación_url = "https://www.ministeriosderekprince.org/materiales/meditaci%C3%B3n-diaria"
 r = requests.get(meditación_url)
 meditación_soup = BeautifulSoup(r.content, 'html5lib')
-meditación_table = meditación_soup.findAll('blockquote')
+meditación_found = meditación_soup.find('p')
 
 #El Santo Del Día
 santo_url = "https://www.santopedia.com/santoral/"+str(dt.day)+"-de-"+dt.strftime("%B")
@@ -125,7 +126,8 @@ article_template = soup.find('section', attrs={'class':'section'})
 title = article_template.h2
 title.string = "Meditación Diaria"
 subtitle = article_template.p
-med_string = "Cuando usted escucha la palabra erosión, ¿qué le viene a la mente? Lo más probable es que piense en cómo se desgastan la tierra o las rocas durante un largo período de tiempo. De la misma manera, la erosión en nuestras vidas espirituales tiende a ocurrir poco a poco en el curso de meses o años.\n\n¿Qué causa este estancamiento y deterioro espiritual? La respuesta suele ser la conformidad con los métodos y los valores del mundo, además del compromiso con el pecado. El proceso de erosión comienza en la mente cuando dejamos que nuestros pensamientos, actitudes y deseos sean moldeados por la manera de pensar del mundo. En poco tiempo, comenzamos a conformarnos con el proceder impío y pecaminoso que nos rodea.\n\n¿Está su vida espiritual donde usted quiere que esté? ¿Se ha debilitado por las presiones del mundo? ¿Está dejando que las redes sociales y las opiniones de otras personas moldeen su mentalidad, deseos y ambiciones? Si es así, la manera de contrarrestar la erosión es volver al Señor en obediencia, y dejar que las Sagradas Escrituras renueven su mente con la verdad de Dios. A medida que aprenda a ver la vida desde la perspectiva del Señor, sus deseos y su conducta se ajustarán a su voluntad perfecta."
+med_string = meditación_found.text.strip().replace("«", "")
+med_string = med_string.replace("»", "")
 subtitle.string = med_string
 newsletter_content += str(article_template)
 
@@ -258,7 +260,7 @@ achive_page.close()
 
 #APPEND TO ARCHIVE--------------------------------------------------------------
 archive_list = open("archive.html", "a", encoding='utf-8')
-archive_list.write('<li><a href='+'\'/newsletter_content/archive/'+today.strftime("%m%d%y")+'.html\'>'+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)+'</a></li>')
+archive_list.write('\n<li><a href='+'\'/newsletter_content/archive/'+today.strftime("%m%d%y")+'.html\'>'+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)+'</a></li>')
 archive_list.close()
 
 #CHECK
