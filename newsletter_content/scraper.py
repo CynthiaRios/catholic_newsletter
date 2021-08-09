@@ -62,10 +62,17 @@ else:
     day_of_week = dt.strftime("%A")
 
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
-meditación_url = "https://www.ministeriosderekprince.org/materiales/meditaci%C3%B3n-diaria"
+#meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
+
+meditación_url = "https://www.regnumchristi.org/es/lunes-9-de-agosto-de-2021-despues-de-la-cruz-viene-la-luz/"
 r = requests.get(meditación_url)
 meditación_soup = BeautifulSoup(r.content, 'html5lib')
-meditación_found = meditación_soup.find('p')
+meditación_table = meditación_soup.findAll('blockquote')
+
+#meditación_url = "https://www.ministeriosderekprince.org/materiales/meditaci%C3%B3n-diaria"
+#r = requests.get(meditación_url)
+#meditación_soup = BeautifulSoup(r.content, 'html5lib')
+#meditación_found = meditación_soup.find('p')
 
 #El Santo Del Día
 santo_url = "https://www.santopedia.com/santoral/"+str(dt.day)+"-de-"+dt.strftime("%B")
@@ -126,7 +133,8 @@ article_template = soup.find('section', attrs={'class':'section'})
 title = article_template.h2
 title.string = "Meditación Diaria"
 subtitle = article_template.p
-med_string = meditación_found.text.strip().replace("«", "")
+#med_string = meditación_found.text.strip().replace("«", "")
+med_string = meditación_table[0].text.strip().replace("«", "")
 med_string = med_string.replace("»", "")
 subtitle.string = med_string
 newsletter_content += str(article_template)
