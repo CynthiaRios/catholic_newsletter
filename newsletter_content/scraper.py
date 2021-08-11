@@ -53,7 +53,6 @@ usccb_soup = BeautifulSoup(r.content, 'html5lib')
 address_table = usccb_soup.findAll('div', attrs = {'class':'address'})
 content_table = usccb_soup.findAll('div', attrs = {'class':'content-body'})
 
-#REGNUMCHRISTI: Meditación de hoy
 if dt.strftime("%A") == "sÃ¡bado":
     day_of_week = "Sábado"
 elif dt.strftime("%A") == "miÃ©rcoles":
@@ -64,11 +63,10 @@ else:
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
 
-meditación_url = "https://www.regnumchristi.org/es/lunes-9-de-agosto-de-2021-despues-de-la-cruz-viene-la-luz/"
+meditación_url = "https://www.ciudadredonda.org/calendario-lecturas/evangelio-del-dia/comentario-homilia/hoy"
 r = requests.get(meditación_url)
 meditación_soup = BeautifulSoup(r.content, 'html5lib')
-meditación_table = meditación_soup.findAll('blockquote')
-
+meditación_table = meditación_soup.findAll('div', attrs = {'class':'ar_marco body-txt'})
 #meditación_url = "https://www.ministeriosderekprince.org/materiales/meditaci%C3%B3n-diaria"
 #r = requests.get(meditación_url)
 #meditación_soup = BeautifulSoup(r.content, 'html5lib')
@@ -134,7 +132,7 @@ title = article_template.h2
 title.string = "Meditación Diaria"
 subtitle = article_template.p
 #med_string = meditación_found.text.strip().replace("«", "")
-med_string = meditación_table[0].text.strip().replace("«", "")
+med_string = meditación_table[0].text.strip().replace("<p>", "/n")
 med_string = med_string.replace("»", "")
 subtitle.string = med_string
 newsletter_content += str(article_template)
