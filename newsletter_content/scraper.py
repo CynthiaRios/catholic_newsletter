@@ -188,7 +188,7 @@ else:
 #El Santo Del Día-----------------------------------------------------------------------
 title.string = "Santo Del Día: " + santo_nombre.text
 subtitle = article_template.p
-subtitle.string = santo_descripcion.text
+subtitle.string = "santo_descripcion.text"
 img = article_template.img
 img['src'] = santo_src
 article_template.img.replace_with(img)
