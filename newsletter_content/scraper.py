@@ -60,6 +60,7 @@ elif dt.strftime("%A") == "miÃ©rcoles":
 else:
     day_of_week = dt.strftime("%A")
 
+day_of_week = "Domingo"
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
 #meditación_url = "https://www.regnumchristi.org/es/"+day_of_week+"-"+str(dt.day)+"-de-"+dt.strftime("%B")+"-de-"+str(dt.year)
 
